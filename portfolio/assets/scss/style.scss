@@ -1,0 +1,13 @@
+@import './abstracts/mixin';
+
+//base
+@import './base/font';
+@import './base/reset';
+@import './base/preset';
+
+//layout
+@import './layout/header';
+@import './layout/footer';
+
+//pages
+@import './pages/main';
