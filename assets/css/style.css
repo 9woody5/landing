@@ -4,22 +4,29 @@
 /*반응형, 브라우저 크기가 768px 이상, 1023px 이하일때*/
 /*반응형, 브라우저 크기가 1024px 이상, 1200px 이하일때*/
 @font-face {
-  font-family: "GmarketSans";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff");
+  font-family: "Pretendard";
+  src: url(../fonts/Pretendard-Light.woff2) format("woff2");
   font-weight: 300;
-  font-style: normal;
 }
 @font-face {
-  font-family: "GmarketSans";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-family: "Pretendard";
+  src: url(../fonts/Pretendard-Regular.woff2) format("woff2");
   font-weight: 400;
-  font-style: normal;
 }
 @font-face {
-  font-family: "GmarketSans";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-family: "Pretendard";
+  src: url(../fonts/Pretendard-Medium.woff2) format("woff2");
   font-weight: 500;
-  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url(../fonts/Pretendard-SemiBold.woff2) format("woff2");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url(../fonts/Pretendard-Bold.woff2) format("woff2");
+  font-weight: 700;
 }
 @font-face {
   font-family: "Grotesk";
@@ -107,7 +114,7 @@ body {
   background: #f9f9f9;
   overflow-x: hidden;
   color: #181818;
-  font-family: "Grotesk", "GmarketSans";
+  font-family: "Grotesk", "Pretendard";
   font-size: 16px;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* firefox */
@@ -158,8 +165,8 @@ body.hidden {
   top: 60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .header .logo {
@@ -701,8 +708,8 @@ section {
   max-width: 100%;
   font-size: 5vw;
   line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: -0.06em;
+  font-weight: 500;
+  letter-spacing: -0.08em;
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .sc-about .intro {
@@ -739,6 +746,7 @@ section {
   font-size: 1.2vw;
   line-height: 1.2;
   font-weight: 400;
+  letter-spacing: -0.05em;
   margin: 5vw 4vw 6vw 40vw;
 }
 @media (min-width: 767px) and (max-width: 1023px) {

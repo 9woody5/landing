@@ -31,8 +31,8 @@ section{
         max-width: 100%;
         font-size: 5vw;
         line-height: 1.2;
-        font-weight: 400;
-        letter-spacing: -0.06em;
+        font-weight: 500;
+        letter-spacing: -0.08em;
         @include tablet{
             max-width: 100%;
             font-size: 5vw;
@@ -57,6 +57,7 @@ section{
         font-size: 1.2vw;
         line-height: 1.2;
         font-weight: 400;
+        letter-spacing: -0.05em;
         margin: 5vw 4vw 6vw 40vw;
         @include tablet{
             margin-left: 0;
