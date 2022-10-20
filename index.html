@@ -15,16 +15,20 @@
     <header class="header">
         <div class="header-wrap">
             <h1 class="logo"><a href="#"><img src="./assets/img/logo.png" alt=""><span class="blind">로고</span></a></h1>
-            <a href="#" class="btn-menu"><i class="bi bi-list"></i><span class="blind">메뉴 열림</span></a>
+            <a href="#" class="btn-menu">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+                <span class="blind">메뉴 열림</span></a>
         </div>
         <div class="side-menu">
             <div class="side-wrap">
                 <div class="menu-left">
                     <nav class="gnb-area">
-                        <ul class="gnb-list">
-                            <li class="gnb-item"><a href="#"><span>about</span></a></li>
-                            <li class="gnb-item"><a href="#"><span>work</span></a></li>
-                            <li class="gnb-item"><a href="#"><span>contact</span></a></li>
+                        <ul class="gnb-list" id="#nav">
+                            <li class="gnb-item"><a href="#about"><span>about</span></a></li>
+                            <li class="gnb-item"><a href="#work"><span>work</span></a></li>
+                            <li class="gnb-item"><a href="#contact"><span>contact</span></a></li>
                         </ul>
                     </nav>
                     <ul class="sns-list">
@@ -49,7 +53,7 @@
     </header>
 
     <main class="container">
-        <section class="sc-about">
+        <section class="sc-about" id="about">
             <div class="txt-box">
                 <h1 class="intro">
                     <p class="txt"><span>끊임없이 탐구하<i class="pc">며 배우</i>는,</span></p>
@@ -57,7 +61,7 @@
                 </h1>
                 <p class="sub-txt"><span>I want to be a web publisher who learns passionately,<br>but knows the importance of basics. </span></p>
             </div>
-            <div class="main-visual"><img src="./assets/img/bg.jpg" alt="메인이미지"></div>
+            <div class="main-visual"><img src="./assets/img/intro.jpg" alt="메인이미지"></div>
         </section>
         <div class="text-scroll scroll01">
             <div class="row row1">
@@ -69,8 +73,8 @@
                 <div class="line"><em>POSITIVE</em>POSITIVE<em>POSITIVE</em>POSITIVE<em>POSITIVE</em>POSITIVE<em>POSITIVE</em>POSITIVE<em>POSITIVE</em>POSITIVE<em>POSITIVE</em></div>
             </div>
         </div>
-        <section class="sc-work">
-            <h2 class="headline">LET’S MAKE YOUR BRAND SUPER CREATIVE AND SUPER ENGAGING</h2>
+        <section class="sc-work" id="work">
+            <h2 class="headline">Let me introduce my project.<br>These are based on semantic markup and are produced using JavaScript and jQuery.</h2>
             <ul class="project-list">
                 <li class="project-item i01">
                     <h3 class="project-name" data-name>Tamburins</h3>
@@ -86,7 +90,7 @@
                         </div>
                         <div class="column-right">
                             <div class="txt-box">
-                                <p class="work">해외 레퍼런스 사이트를 참고하여 제작한<br class="space-pc">Tamburins 반응형 웹사이트입니다.<br class="space-pc">GSAP Scrolltrigger를 활용하여<br class="space-pc">다양한 동적 요소를 구현하였습니다.</p>
+                                <p class="work">해외 레퍼런스 사이트를 참고하여 제작한 Tamburins 반응형 웹사이트입니다.<br class="space-tb">GSAP Scrolltrigger를 활용하여 다양한 동적 요소를 구현하였습니다.</p>
                                 <i class="line"></i>
                                 <p class="category">
                                     <span>#SCSS</span>
@@ -188,7 +192,7 @@
                         </div>
                         <div class="column-right">
                             <div class="txt-box">
-                                <p class="work">CGV 공식 모바일 사이트를 참고하여 제작한 <br class="space-max"> 적응형 모바일 웹사이트입니다.</p>
+                                <p class="work">CGV 공식 모바일 사이트를 참고하여 제작한 <br class="space-max"> 적응형 모바일 웹사이트입니다. JSON을 이용한 데이터 바인딩 프로젝트입니다. </p>
                                 <i class="line"></i>
                                 <p class="category">
                                     <span>#SCSS</span>
@@ -253,7 +257,7 @@
                         </div>
                         <div class="column-right">
                             <div class="txt-box">
-                                <p class="work">서울시청 공식 홈페이지를 참고하여 제작한 적응형 PC 웹사이트입니다.<br>웹 접근성을 준수하여 모든 컨텐츠가 Tab키로 이동이 가능하도록 구현하였습니다.</p>
+                                <p class="work">웹 접근성을 준수하여 제작한 서울시청 적응형 PC 웹사이트입니다.<br>모든 컨텐츠에 Tab키로 접근이 가능하도록 구현하였습니다.</p>
                                 <i class="line"></i>
                                 <p class="category">
                                     <span>#CSS</span>
@@ -292,7 +296,7 @@
             <div>
                 <h2 class="title">To Be</h2>
             </div>
-            <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae distinctio pariatur ipsa molestiae dolor consequuntur tempore</p>
+            <p class="content">새로운 것을 흡수하되, 기본을 잊지 않겠습니다. <br>항상 웹 표준과 웹 접근성을 준수하며,<br>가장 효율적인 웹사이트를 구축하기 위해 노력하는 웹 퍼블리셔가 되고자 합니다.  </p>
         </section>
         <div class="text-scroll">
             <div class="row">
@@ -302,7 +306,7 @@
         </div>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
         <div class="wrap">
             <div class="column-left">
                 <h3 class="f-logo"><a href="#"><img src="./assets/img/logo.png" alt=""><span class="blind">하단 로고</span></a></h3>
@@ -310,7 +314,7 @@
             </div>
             <div class="column-right">
                 <div class="txt-box">
-                    <p>Let’s work together and  create something beautiful. Give us a call or send us an e-mail.</p>
+                    <p>Let’s work together! Give me a call or send me an e-mail. I'm looking forward to hearing from you.</p>
                     <span class="email-addr">woojin958@gmail.com</span>
                     <button class="btn-contact">CONTACT NOW</button>
                 </div>
@@ -329,9 +333,8 @@
         </div>
         <div class="wrap-tablet">
             <div class="contact-area">
-                <h3 class="f-logo"><a href="#"><img src="./assets/img/logo.png" alt=""><span class="blind">하단 로고</span></a></h3>
                 <div class="txt-box">
-                    <p>Let’s work together and  create something beautiful. Give us a call or send us an e-mail.</p>
+                    <p>Let’s work together! Give me a call or send me an e-mail. I'm looking forward to hearing from you.</p>
                     <span class="email-addr">woojin958@gmail.com</span>
                     <button class="btn-contact">CONTACT NOW</button>
                 </div>

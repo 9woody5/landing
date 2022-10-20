@@ -1,5 +1,4 @@
 .footer{
-    // display: none;
     .wrap{
         display: flex;
         padding-left: 13em;
@@ -29,10 +28,6 @@
     .f-logo{
         width: 100px;
         height: 100px;
-        @include mobile{
-            width: 70px;
-            height: 70px;
-        }
         a{
             display: block;
             height: 100%;
@@ -83,6 +78,12 @@
             &:not(:first-child){
                 margin-left: 20px;
             }
+            a{
+                transition: color .3s;
+                &:hover{
+                    color: rgba(13, 13, 13, 0.371);
+                }
+            }
         }
     }
     .border{
@@ -107,8 +108,8 @@
             width: 100px; height: 100px;
             background: rgb(255, 201, 52);
             border-radius: 50%;
-            font-size: 2vw;
-            font-weight: 600;
+            font-size: 1.5vw;
+            font-weight: 400;
             text-align: center;
             line-height: 100px;
         }
@@ -148,9 +149,17 @@
                 &:not(:first-child){
                     margin-left: 15px;
                 }
-                svg{width: 20px; height: 20px;}
-                &:hover{
-                    color: #999;
+                svg{
+                    width: 30px; height: 30px;
+                    @include mobile{
+                        width: 25px; height: 25px;
+                    }
+                }
+                a{
+                    transition: color .3s;
+                    &:hover{
+                        color: rgba(13, 13, 13, 0.371);
+                    }
                 }
             }
             .copy{
@@ -170,7 +179,7 @@
                 text-align: center;
                 line-height: 80px;
                 @include mobile{display: none;}
-                }
+            }
         }
         .txt-box{
             flex: 1;

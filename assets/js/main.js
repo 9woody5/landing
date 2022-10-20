@@ -13,12 +13,13 @@ $(function(){
 
     $('.btn-menu').click(function(e){
         e.preventDefault();
-        if($('.side-menu').hasClass('active')){
+        if($('.btn-menu .line').hasClass('active')){
+            $('.btn-menu .line').removeClass('active')
             $('.side-menu').removeClass('active')
             $('body').removeClass('hidden')
             motion1.reverse()
         } else{
-            $('.side-menu').removeClass('active')
+            $('.btn-menu .line').addClass('active')
             $('.side-menu').addClass('active')
             $('body').addClass('hidden')
             motion1.restart()
@@ -39,6 +40,25 @@ $(function(){
         paused:true,
     })
 
+    
+    //side-menu 링크 클릭 시 효과
+
+    var sMenu = $(".side-menu");
+
+    $('.gnb-item a').on("click", function (e) {
+        sMenu.click().removeClass("active");
+        $('.btn-menu .line').removeClass('active')
+    });
+
+
+
+      $(document).ready(function(){
+        $('.gnb-item a').click(function(e) {
+            e.preventDefault();
+            $("html, body").animate({ scrollTop: $($(this).attr("href")).offset().top }, 1500);
+        });
+    });
+
 
 
     //메인 텍스트 효과
@@ -47,7 +67,6 @@ $(function(){
 
     const mainTxt = gsap.to('.sc-about .txt span',{
         yPercent:0,
-        // delay:3,
         // paused:true
     })
 
@@ -58,7 +77,6 @@ $(function(){
 
     const subTxt = gsap.to('.sc-about .sub-txt',{
         yPercent:0,
-        // delay:3,
         opacity:1
     })
 
@@ -68,7 +86,6 @@ $(function(){
 
     const mainImg = gsap.to('.sc-about .main-visual',{
         yPercent:0,
-        // delay:3,
         duration:1,
         ease: Power4,
         opacity:1,
@@ -110,7 +127,7 @@ $(function(){
     const hdTxt = gsap.to('.sc-work .headline',{
         scrollTrigger:{
             trigger: '.scroll01',
-            start:"center 60%", //트리거, 윈도우 시작점이 만나야 실행`
+            start:"center 50%", //트리거, 윈도우 시작점이 만나야 실행`
             end:"bottom 70%", //bottom top은 기본값, scrub있을 때만 변경 필요
             // markers:true,
             delay:1,
@@ -127,18 +144,31 @@ $(function(){
         gsap.from(n,{
             scrollTrigger:{
                 trigger: n,
-                start:"top 50%", //트리거, 윈도우 시작점이 만나야 실행`
-                end:"0% 30%", //bottom top은 기본값, scrub있을 때만 변경 필요
+                start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
+                end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
                 // markers:true,
-                scrub:1,
-                // pin:true
+                // scrub:1,
             },
             yPercent: 100,
             opacity:0
         })
     })
-    
 
+    
+    
+    //btn-down
+    $('.i01 .btn-down').click(function(){
+        const scrollTop = $('.i02').offset().top;
+        $('html, body').animate({scrollTop: scrollTop}, 500);
+      });
+
+    //top버튼
+
+    $('.btn-top').click(function(){
+                
+        $('body,html').animate({scrollTop: 0}, 400);
+        return false;
+    });
 
     
 })
