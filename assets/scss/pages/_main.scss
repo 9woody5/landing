@@ -88,37 +88,29 @@ section{
     }
 }
 
-//리셋될 때 끊기는 거 해결해야함
 .text-scroll{
-    // display: none;
     overflow: hidden;
     width: 100vw;
     padding: 7vw 0;
-    span{
+
+    .row{
         display: flex;
-        width: 100%;
-        transform: translateX(0%);
         font-style: italic;
         font-size: 8vw;
         line-height: 1;
         white-space: nowrap;
         color: #181818;
-        @include desktop{
-            font-size: 12vw;
+        .line{
+            animation: moveLeft 60s linear infinite;
         }
-        @include tablet{
-            font-size: 12vw;
-        }
-        @include mobile{
-            font-size: 15vw;
+        &.row2{
+            .line{
+                animation: moveLeft 30s linear infinite;
+
+            }
         }
     }
-    .row1{
-        animation: moveLeft 15s linear infinite;
-    }
-    .row2{
-        animation: moveLeft 15s linear infinite;
-    }
+
     @keyframes moveLeft{
         0%{
             transform: translateX(0%);

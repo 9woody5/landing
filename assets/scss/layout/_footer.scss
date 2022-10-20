@@ -29,6 +29,10 @@
     .f-logo{
         width: 100px;
         height: 100px;
+        @include mobile{
+            width: 70px;
+            height: 70px;
+        }
         a{
             display: block;
             height: 100%;

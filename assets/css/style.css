@@ -458,6 +458,12 @@ body.hidden {
   width: 100px;
   height: 100px;
 }
+@media (max-width: 767px) {
+  .footer .f-logo {
+    width: 70px;
+    height: 70px;
+  }
+}
 .footer .f-logo a {
   display: block;
   height: 100%;
@@ -787,36 +793,19 @@ section {
   width: 100vw;
   padding: 7vw 0;
 }
-.text-scroll span {
+.text-scroll .row {
   display: flex;
-  width: 100%;
-  transform: translateX(0%);
   font-style: italic;
   font-size: 8vw;
   line-height: 1;
   white-space: nowrap;
   color: #181818;
 }
-@media (min-width: 1023px) {
-  .text-scroll span {
-    font-size: 12vw;
-  }
+.text-scroll .row .line {
+  animation: moveLeft 60s linear infinite;
 }
-@media (min-width: 767px) and (max-width: 1023px) {
-  .text-scroll span {
-    font-size: 12vw;
-  }
-}
-@media (max-width: 767px) {
-  .text-scroll span {
-    font-size: 15vw;
-  }
-}
-.text-scroll .row1 {
-  animation: moveLeft 15s linear infinite;
-}
-.text-scroll .row2 {
-  animation: moveLeft 15s linear infinite;
+.text-scroll .row.row2 .line {
+  animation: moveLeft 30s linear infinite;
 }
 @keyframes moveLeft {
   0% {
