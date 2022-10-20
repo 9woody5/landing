@@ -2,7 +2,7 @@
 /*반응형 화면 크기*/
 /*반응형, 브라우저 크기가 767px 이하일때*/
 /*반응형, 브라우저 크기가 768px 이상, 1023px 이하일때*/
-/*반응형, 브라우저 크기가 1024px 이상, 1200px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일 때*/
 @font-face {
   font-family: "Pretendard";
   src: url(../fonts/Pretendard-Light.woff2) format("woff2");
@@ -145,7 +145,7 @@ body.hidden {
   height: 100vh;
   z-index: 15;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .header .header-wrap {
     width: 5em;
   }
@@ -207,7 +207,7 @@ body.hidden {
   visibility: hidden;
   transition: 0.7s;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .side-menu {
     padding-left: 5em;
   }
@@ -264,7 +264,11 @@ body.hidden {
     padding-left: 3em;
   }
 }
+.side-menu .gnb-item {
+  overflow: hidden;
+}
 .side-menu .gnb-item a {
+  display: block;
   font-size: 4vw;
   font-weight: 600;
   line-height: 1;
@@ -413,7 +417,7 @@ body.hidden {
   padding-left: 13em;
   border-top: 1px solid #000;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .footer .wrap {
     padding-left: 8em;
   }
@@ -506,7 +510,7 @@ body.hidden {
   width: 250px;
   position: relative;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .footer .border {
     width: 27vw;
   }
@@ -675,7 +679,7 @@ body.hidden {
 section {
   padding-left: 13em;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   section {
     padding-left: 10em;
   }
@@ -793,7 +797,7 @@ section {
   white-space: nowrap;
   color: #181818;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .text-scroll span {
     font-size: 12vw;
   }
@@ -831,7 +835,7 @@ section {
 .sc-work {
   padding-right: 5em;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work {
     padding-right: 4em;
   }
@@ -937,7 +941,7 @@ section {
 .sc-work .project-item.i02 {
   margin: 0 auto 15vw;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i02 {
     padding: 0;
   }
@@ -1015,7 +1019,7 @@ section {
   width: auto;
   padding-left: 7vw;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i03 .group-flex {
     padding-left: 3vw;
   }
@@ -1036,7 +1040,7 @@ section {
   padding-top: 3vw;
   flex-direction: row-reverse;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i03 .column-right {
     width: 54vw;
   }
@@ -1083,7 +1087,7 @@ section {
   height: 30vw;
   display: block;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i03 .thumb {
     width: 54vw;
   }
@@ -1123,7 +1127,7 @@ section {
   padding-left: 0;
   padding-right: 5vw;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i04 .column-right {
     max-width: 30vw;
   }
@@ -1141,7 +1145,7 @@ section {
 .sc-work .project-item.i04 .category {
   max-width: 30vw;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i04 .category {
     max-width: 30vw;
   }
@@ -1206,7 +1210,7 @@ section {
   padding-right: 5vw;
   position: relative;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .project-item.i05 .column-right {
     max-width: 30vw;
   }
@@ -1448,10 +1452,11 @@ section {
   display: block;
   position: relative;
 }
-.sc-work .group-flex .thumb:hover .hover-wrap {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.4s;
+@media (min-width: 1023px) {
+  .sc-work .group-flex .thumb:hover .hover-wrap {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 .sc-work .group-flex .thumb img {
   width: 100%;
@@ -1459,23 +1464,32 @@ section {
   object-fit: cover;
 }
 .sc-work .hover-wrap {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   z-index: 10;
   width: 100%;
   height: inherit;
-  background: rgba(0, 0, 0, 0.564);
+  transition: opacity 0.4s, visibility 0.4s;
+}
+@media (min-width: 1023px) {
+  .sc-work .hover-wrap {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.564);
+  }
 }
 .sc-work .hover-wrap .btn-wrap {
   position: absolute;
   bottom: 3vw;
   right: 3vw;
 }
+@media (max-width: 767px) {
+  .sc-work .hover-wrap .btn-wrap {
+    right: 0;
+  }
+}
 .sc-work .hover-wrap a {
-  color: #f9f9f9;
   font-weight: 600;
   display: inline-block;
   padding: 10px 20px;
@@ -1484,9 +1498,29 @@ section {
   margin: 0 10px;
   transition: background 0.3s, color 0.3s;
 }
-.sc-work .hover-wrap a:hover {
-  background: #f9f9f9;
-  color: #181818;
+@media (min-width: 1023px) {
+  .sc-work .hover-wrap a {
+    color: #f9f9f9;
+  }
+  .sc-work .hover-wrap a:hover {
+    background: #f9f9f9;
+    color: #181818;
+  }
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .sc-work .hover-wrap a {
+    background: #f9f9f9;
+    color: #181818;
+  }
+}
+@media (max-width: 767px) {
+  .sc-work .hover-wrap a {
+    background: #f9f9f9;
+    color: #181818;
+    padding: 3px 8px;
+    font-size: 3vw;
+    margin: 0 5px;
+  }
 }
 .sc-work .column-right {
   padding-left: 5vw;
@@ -1501,7 +1535,7 @@ section {
     display: none;
   }
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .txt-box .space-max {
     display: none;
   }
@@ -1520,7 +1554,7 @@ section {
   font-size: 15px;
   font-weight: 400;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .txt-box .work {
     font-size: 17px;
   }
@@ -1543,7 +1577,7 @@ section {
   color: #181818;
   letter-spacing: -0.04em;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-work .txt-box .category {
     font-size: 1.5vw;
   }
@@ -1627,7 +1661,7 @@ section {
   width: 6vw;
   margin-bottom: 3vw;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-outro .title {
     font-size: 3vw;
     width: 8.5vw;
@@ -1646,7 +1680,7 @@ section {
   font-weight: 300;
   color: #181818;
 }
-@media (min-width: 1023px) and (max-width: 1200px) {
+@media (min-width: 1023px) {
   .sc-outro .content {
     font-size: 3vw;
   }

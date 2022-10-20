@@ -1,5 +1,9 @@
 $(function(){
 
+    
+
+
+
     $(document).on('click', 'a[href="#"]', function (e) {
         e.preventDefault();
       });
@@ -9,30 +13,31 @@ $(function(){
 
     $('.btn-menu').click(function(e){
         e.preventDefault();
-        
         if($('.side-menu').hasClass('active')){
-
             $('.side-menu').removeClass('active')
             $('body').removeClass('hidden')
+            motion1.reverse()
         } else{
             $('.side-menu').removeClass('active')
             $('.side-menu').addClass('active')
             $('body').addClass('hidden')
-            
+            motion1.restart()
         }
-
     })
+
+
+
 
     //사이드 메뉴 텍스트 페이드업
     // gsap.set('.menu-left .gnb-item',{overflow:'hidden', opacity:0})
     // gsap.set('.menu-left .gnb-item a',{yPercent:100})
 
-    // const motion1 = gsap.to('.menu-left .gnb-item a',{
-    //     yPercent:0,
-    //     stagger:0.3,
-    //     // delay:2,
-    //     opacity:1,
-    // })
+    const motion1 = gsap.from('.side-menu .gnb-item a',{
+        yPercent:100,
+        stagger:0.3,
+        opacity:0,
+        paused:true,
+    })
 
 
 
@@ -42,7 +47,7 @@ $(function(){
 
     const mainTxt = gsap.to('.sc-about .txt span',{
         yPercent:0,
-        delay:3,
+        // delay:3,
         // paused:true
     })
 
@@ -53,7 +58,7 @@ $(function(){
 
     const subTxt = gsap.to('.sc-about .sub-txt',{
         yPercent:0,
-        delay:3,
+        // delay:3,
         opacity:1
     })
 
@@ -63,7 +68,7 @@ $(function(){
 
     const mainImg = gsap.to('.sc-about .main-visual',{
         yPercent:0,
-        delay:3,
+        // delay:3,
         duration:1,
         ease: Power4,
         opacity:1,

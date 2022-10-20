@@ -616,11 +616,13 @@ section{
             overflow: hidden;
             display: block;
             position: relative;
-            &:hover{
-                .hover-wrap{
-                    opacity: 1;
-                    visibility: visible;
-                    transition: opacity .4s;
+            @include desktop{
+                &:hover{
+                    .hover-wrap{
+                        opacity: 1;
+                        visibility: visible;
+    
+                    }
                 }
             }
             img{
@@ -631,32 +633,50 @@ section{
         }
     }
     .hover-wrap{
-        opacity: 0;
-        visibility: hidden;
-        position: absolute;
-        top: 0; left: 0;
         z-index: 10;
         width: 100%;
         height: inherit;
-        background: rgba(0, 0, 0, 0.564);
+        transition: opacity .4s, visibility .4s;
+        @include desktop{
+            opacity: 0;
+            visibility: hidden;
+            position: absolute;
+            top: 0; left: 0;
+            background: rgba(0, 0, 0, 0.564);
+        }
         .btn-wrap{
             position: absolute;
             bottom: 3vw;
             right: 3vw;
+            @include mobile{
+                right: 0;
+            }
         }
         a{
-            color: #f9f9f9;
             font-weight: 600;
             display: inline-block;
-            // background: #f9f9f9;
             padding: 10px 20px;
             text-align: center;
             border-radius: 50px;
             margin: 0 10px;
             transition: background .3s, color .3s;
-            &:hover{
+            @include desktop{
+                color: #f9f9f9;
+                &:hover{
+                    background: #f9f9f9;
+                    color: #181818;
+                }
+            }
+            @include tablet{
                 background: #f9f9f9;
                 color: #181818;
+            }
+            @include mobile{
+                background: #f9f9f9;
+                color: #181818;
+                padding: 3px 8px;
+                font-size: 3vw;
+                margin: 0 5px;
             }
         }
     }

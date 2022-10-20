@@ -22,9 +22,9 @@ $desktop-max: 1200px; //1024
     }
   }
 
-/*반응형, 브라우저 크기가 1024px 이상, 1200px 이하일때*/
+/*반응형, 브라우저 크기가 1024px 이상일 때*/
   @mixin desktop{
-    @media (min-width: $desktop-min) and (max-width: $desktop-max){
+    @media (min-width: $desktop-min){
       @content;
     }
   }
