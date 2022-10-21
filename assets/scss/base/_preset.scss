@@ -20,6 +20,9 @@
         width: 100px; height: 100px;
         filter: blur(20px);
         transition: filter 1s;
+        @include mobile{
+            width: 50px; height: 50px;
+        }
     }
     &.active{
         .logo{

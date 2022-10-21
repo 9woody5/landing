@@ -130,6 +130,12 @@ table {
   filter: blur(20px);
   transition: filter 1s;
 }
+@media (max-width: 767px) {
+  .page-load .logo {
+    width: 50px;
+    height: 50px;
+  }
+}
 .page-load.active .logo {
   filter: none;
 }
@@ -1531,7 +1537,7 @@ section {
 }
 @media (max-width: 767px) {
   .sc-work .project-name {
-    font-size: 7vw;
+    font-size: 10vw;
     font-weight: 500;
     font-style: italic;
   }
