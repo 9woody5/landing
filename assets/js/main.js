@@ -19,7 +19,6 @@ $(function(){
             $('.page-load').removeClass('active')
             $('body').removeClass('hidden')
             mainTxt.play();
-            load.remove();
         }
     })
 
@@ -38,6 +37,8 @@ $(function(){
       });
 
     
+
+      
     //메뉴 열림
 
     $('.btn-menu').click(function(e){
@@ -187,7 +188,7 @@ $(function(){
                 gsap.from(n,{
                     scrollTrigger:{
                         trigger: n,
-                        start:"0% 40%", //트리거, 윈도우 시작점이 만나야 실행`
+                        start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
                         // end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
                         markers:true,
                         // scrub:1,
