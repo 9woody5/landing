@@ -1,6 +1,26 @@
 $(function(){
 
     
+    const load = gsap.timeline({
+        paused:true,
+        onStart: function(){
+            $('.page-load').addClass('active')
+            $('body').addClass('hidden')
+        },
+        onComplete: function(){
+            $('.page-load').removeClass('active')
+            $('body').removeClass('hidden')
+            
+        }
+    })
+
+    load.addLabel('motion')
+    .to('.load-wrap',{opacity:1, delete: .3, duration:1.5}, 'motion')
+    .to('.page-load .logo', {opacity: 1, delay: 1, duration:3}, 'motion')
+    .to('.page-load', {yPercent: -100, ease: Power3.easeIn, delay:1.5, duration:2},'motion')
+    .set('.page-load', {display: 'none', delay: 3.3, duration: 1}, 'motion')
+    .fromTo('.container',{yPercent:100, opacity:0}, {yPercent:0, opacity:1, duration:.3, delay: 3.2, ease: Power3.easeOut,}, 'motion')
+    load.play();
 
 
 
@@ -48,6 +68,7 @@ $(function(){
     $('.gnb-item a').on("click", function (e) {
         sMenu.click().removeClass("active");
         $('.btn-menu .line').removeClass('active')
+        $('body').removeClass('hidden')
     });
 
 
@@ -146,7 +167,7 @@ $(function(){
                 trigger: n,
                 start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
                 end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
-                // markers:true,
+                markers:true,
                 // scrub:1,
             },
             yPercent: 100,

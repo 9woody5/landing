@@ -1,6 +1,5 @@
 .container{
     padding-top: 130px;
-    // padding-left: 13em;
 }
 section{
     padding-left: 13em;
@@ -19,7 +18,6 @@ section{
     z-index: 2;
     display: flex;
     min-height: 100px;
-    // padding-left: 10em;
     flex-direction: column;
     .txt-box{
         display: flex;
@@ -95,9 +93,6 @@ section{
 
     .row{
         display: flex;
-        font-style: italic;
-        font-size: 8vw;
-        line-height: 1;
         white-space: nowrap;
         color: #181818;
         @include desktop{
@@ -106,11 +101,14 @@ section{
         @include tablet{font-size: 15vw;}
         @include mobile{font-size: 15vw;}
         .line{
-            animation: moveLeft 60s linear infinite;
+            font-style: italic;
+            font-size: 8vw;
+            line-height: 1;
+            animation: moveLeft 50s linear infinite;
         }
         &.row2{
             .line{
-                animation: moveLeft 40s linear infinite;
+                animation: moveLeft 30s linear infinite;
 
             }
         }
@@ -143,7 +141,6 @@ section{
     }
     .headline{
         display: flex;
-        // max-width: 40vw;
         margin: 50px 0 135px;
         font-weight: 500;
         font-size: 1.2vw;
@@ -291,7 +288,6 @@ section{
             .column-right{
                 width: 50vw;
                 padding-left: 0;
-                // padding-right: 5vw;
                 padding-top: 3vw;
                 flex-direction: row-reverse;
                 @include desktop{
@@ -338,12 +334,10 @@ section{
                 }
                 img{
                     width: 100%;
-                    // object-fit: cover;
                 }
             }
         }
         &.i04{
-            // position: relative;
             h3{margin-bottom: 3vw;}
             .group-flex{
                 flex-direction: row-reverse;
@@ -426,16 +420,12 @@ section{
                 }
                 @include tablet{
                     padding: 3vw 0 0 0;
-                    // width: 100%;
                 }
                 @include mobile{
                     padding: 3vw 0 0 0;
                 }
             }
             .category{
-                // position: absolute;
-                // right: 5vw;
-                // margin-top: 1.5vw;
                 @include tablet{
                     position: relative;
                     margin-top: 3vw;
@@ -474,7 +464,6 @@ section{
             .group-flex{
                 display: flex;
                 flex-direction: column;
-                // align-items: flex-end;
                 margin-top: 0;
                 flex: 1;
                 width: auto;
@@ -489,7 +478,6 @@ section{
             }
             .column-right{
                 padding-left: 0;
-                // padding-right: 5vw;
                 padding-top: 3vw;
                 width: 55vw;
                 @include tablet{
@@ -499,7 +487,6 @@ section{
                     width: 100%;
                 }
             }
-            // .txt-box{text-align: right;}
             .btn-arrow{
                 display: block;
                 margin-top: 2vw;
@@ -539,7 +526,6 @@ section{
         }
         &.i07{
             margin: 0 auto 15vw;
-            // padding: 0 7vw;
             @include desktop{
             }
             @include tablet{
@@ -615,7 +601,6 @@ section{
         margin-top: 3vw;
         align-items: flex-start;
         .thumb{
-            // flex: 1;
             overflow: hidden;
             display: block;
             position: relative;
@@ -680,6 +665,11 @@ section{
                 padding: 3px 8px;
                 font-size: 3vw;
                 margin: 0 5px;
+                &:hover{
+                    background: transparent;
+                    color: #f9f9f9;
+
+                }
             }
         }
     }
@@ -688,12 +678,6 @@ section{
     }
     .txt-box{
         .space-tb{
-            @include desktop{display: none;}
-            @include mobile{display: none;}
-        }
-        .space-max{
-            @include desktop{display: none;}
-            @include tablet{display: none;}
             @include mobile{display: none;}
         }
         .work{

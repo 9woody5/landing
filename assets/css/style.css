@@ -110,6 +110,30 @@ table {
   clip: rect(0 0 0 0);
 }
 
+.page-load {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: relative;
+  background: #f9f9f9;
+}
+.page-load .load-wrap {
+  opacity: 0;
+}
+.page-load .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  filter: blur(20px);
+  transition: filter 1s;
+}
+.page-load.active .logo {
+  filter: none;
+}
+
 body {
   background: #f9f9f9;
   overflow-x: hidden;
@@ -857,9 +881,6 @@ section {
 }
 .text-scroll .row {
   display: flex;
-  font-style: italic;
-  font-size: 8vw;
-  line-height: 1;
   white-space: nowrap;
   color: #181818;
 }
@@ -879,10 +900,13 @@ section {
   }
 }
 .text-scroll .row .line {
-  animation: moveLeft 60s linear infinite;
+  font-style: italic;
+  font-size: 8vw;
+  line-height: 1;
+  animation: moveLeft 50s linear infinite;
 }
 .text-scroll .row.row2 .line {
-  animation: moveLeft 40s linear infinite;
+  animation: moveLeft 30s linear infinite;
 }
 @keyframes moveLeft {
   0% {
@@ -1592,32 +1616,16 @@ section {
     font-size: 3vw;
     margin: 0 5px;
   }
+  .sc-work .hover-wrap a:hover {
+    background: transparent;
+    color: #f9f9f9;
+  }
 }
 .sc-work .column-right {
   padding-left: 5vw;
 }
-@media (min-width: 1023px) {
-  .sc-work .txt-box .space-tb {
-    display: none;
-  }
-}
 @media (max-width: 767px) {
   .sc-work .txt-box .space-tb {
-    display: none;
-  }
-}
-@media (min-width: 1023px) {
-  .sc-work .txt-box .space-max {
-    display: none;
-  }
-}
-@media (min-width: 767px) and (max-width: 1023px) {
-  .sc-work .txt-box .space-max {
-    display: none;
-  }
-}
-@media (max-width: 767px) {
-  .sc-work .txt-box .space-max {
     display: none;
   }
 }
