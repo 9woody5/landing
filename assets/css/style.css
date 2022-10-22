@@ -415,26 +415,6 @@ body.hidden {
   white-space: nowrap;
   padding: 3vw 0;
 }
-.side-menu .menu-right .text-scroll .row1 {
-  font-size: 8vw;
-  line-height: 1;
-  font-style: italic;
-  color: #181818;
-}
-@media (min-width: 767px) and (max-width: 1023px) {
-  .side-menu .menu-right .text-scroll .row1 {
-    font-size: 15vw;
-    -webkit-text-fill-color: #f9f9f9;
-    -webkit-text-stroke-width: 1px;
-  }
-}
-@media (max-width: 767px) {
-  .side-menu .menu-right .text-scroll .row1 {
-    font-size: 15vw;
-    -webkit-text-fill-color: #f9f9f9;
-    -webkit-text-stroke-width: 1px;
-  }
-}
 .side-menu .menu-right .circle {
   position: absolute;
   top: 100px;
@@ -767,6 +747,7 @@ body.hidden {
     padding: 8px 15px;
     margin-top: 2vw;
     margin-bottom: 7vw;
+    font-size: 3vw;
   }
 }
 
@@ -907,9 +888,8 @@ section {
 }
 .text-scroll .row .line {
   font-style: italic;
-  font-size: 8vw;
   line-height: 1;
-  animation: moveLeft 50s linear infinite;
+  animation: moveLeft 45s linear infinite;
 }
 .text-scroll .row.row2 .line {
   animation: moveLeft 30s linear infinite;
@@ -950,7 +930,8 @@ section {
   display: flex;
   margin: 50px 0 135px;
   font-weight: 500;
-  font-size: 1.2vw;
+  font-size: 1.5vw;
+  max-width: 30vw;
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .sc-work .headline {
@@ -1612,6 +1593,13 @@ section {
   .sc-work .hover-wrap a {
     background: #f9f9f9;
     color: #181818;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .sc-work .hover-wrap a:hover {
+    background: transparent;
+    color: #f9f9f9;
   }
 }
 @media (max-width: 767px) {
@@ -1646,7 +1634,7 @@ section {
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .sc-work .txt-box .work {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 }
 @media (max-width: 767px) {
@@ -1669,7 +1657,7 @@ section {
 }
 @media (min-width: 767px) and (max-width: 1023px) {
   .sc-work .txt-box .category {
-    font-size: 1.5vw;
+    font-size: 2.5vw;
   }
 }
 @media (max-width: 767px) {

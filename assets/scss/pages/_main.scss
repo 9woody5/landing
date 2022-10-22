@@ -102,9 +102,8 @@ section{
         @include mobile{font-size: 15vw;}
         .line{
             font-style: italic;
-            font-size: 8vw;
             line-height: 1;
-            animation: moveLeft 50s linear infinite;
+            animation: moveLeft 45s linear infinite;
         }
         &.row2{
             .line{
@@ -143,7 +142,8 @@ section{
         display: flex;
         margin: 50px 0 135px;
         font-weight: 500;
-        font-size: 1.2vw;
+        font-size: 1.5vw;
+        max-width: 30vw;
         @include tablet{
             font-size: 3vw;
             max-width: 70vw;
@@ -658,6 +658,14 @@ section{
             @include tablet{
                 background: #f9f9f9;
                 color: #181818;
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+                &:hover{
+                    background: transparent;
+                    color: #f9f9f9;
+
+                }
             }
             @include mobile{
                 background: #f9f9f9;
@@ -687,7 +695,7 @@ section{
                 font-size: 17px;
             }
             @include tablet{
-                font-size: 2vw;
+                font-size: 2.5vw;
             }
             @include mobile{
                 font-size: 3.8vw;
@@ -704,7 +712,7 @@ section{
                 font-size: 1.5vw;
             }
             @include tablet{
-                font-size: 1.5vw;
+                font-size: 2.5vw;
             }
             @include mobile{
                 font-size: 4vw;

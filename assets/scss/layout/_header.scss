@@ -216,22 +216,6 @@
             overflow: hidden;
             white-space: nowrap;
             padding: 3vw 0;
-            .row1{
-                font-size: 8vw;
-                line-height: 1;
-                font-style: italic;
-                color: #181818;
-                @include tablet{
-                    font-size: 15vw;
-                    -webkit-text-fill-color: #f9f9f9;
-                    -webkit-text-stroke-width: 1px;
-                }
-                @include mobile{
-                    font-size: 15vw;
-                    -webkit-text-fill-color: #f9f9f9;
-                    -webkit-text-stroke-width: 1px;
-                }
-            }
         }
         .circle{
             position: absolute;
