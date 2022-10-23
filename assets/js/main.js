@@ -1,23 +1,50 @@
 $(function(){
 
+    //마우스 커서 효과
+    $('body').mousemove(function(e){
+        x = e.clientX;
+        y = e.clientY;
+
+        gsap.to('.cursor',{
+            x:x,
+            y:y,
+            duration:0.2,
+        })
+    })
+    
+
+    //하버 시 커서 효과
+    $('a').hover(function(e){
+        $('.cursor').addClass('hover')
+    }, function(){
+        $('.cursor').removeClass('hover')
+    })
+
+
+
+
     //메인 텍스트 효과
     gsap.set('.sc-about .txt',{overflow:'hidden'})
     gsap.set('.sc-about .txt span',{yPercent:100})
 
     const mainTxt = gsap.to('.sc-about .txt span',{
         yPercent:0,
-        paused:true
+        paused:true,
     })
+
+    
     
     const load = gsap.timeline({
         paused:true,
         onStart: function(){
             $('.page-load').addClass('active')
             $('body').addClass('hidden');
+            $('.cursor').hide();
         },
         onComplete: function(){
             $('.page-load').removeClass('active')
             $('body').removeClass('hidden')
+            $('.cursor').show();
             mainTxt.play();
         }
     })
@@ -25,9 +52,8 @@ $(function(){
     load.addLabel('motion')
     .to('.load-wrap',{opacity:1, delay: .3, duration:1.5}, 'motion')
     .to('.page-load .logo', {opacity: 1, delay: 1, duration:3}, 'motion')
-    .to('.page-load', {xPercent: -100, ease: Power3.easeIn, delay:1.5, duration:2},'motion')
-    .set('.page-load', {display: 'none', delay: 3.5, duration: 2}, 'motion')
-    .fromTo('.sc-about',{yPercent:100, opacity:0}, {yPercent:0, opacity:1, duration:1, delay: 3.2, ease: Power3.easeOut}, 'motion')
+    .to('.page-load', {xPercent: 100, ease: Power3.easeIn, delay:1.5, duration:2},'motion')
+    .set('.page-load', {display: 'none', delay: 3.5, duration: 1.5}, 'motion')
     load.play();
 
 
@@ -168,46 +194,14 @@ $(function(){
 
     ScrollTrigger.matchMedia({
         //pc
-        "(min-width: 1024px)": function(){
+        "(max-width: 2000px)": function(){
             $('[data-name]').each(function(i,n){
                 gsap.from(n,{
                     scrollTrigger:{
                         trigger: n,
                         start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
                         // end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
-                        markers:true,
-                        // scrub:1,
-                    },
-                    yPercent: 100,
-                    opacity:0
-                })
-            })
-        },
-        // tablet
-        "(min-width: 768px) and (max-width: 1023px)": function(){
-            $('[data-name]').each(function(i,n){
-                gsap.from(n,{
-                    scrollTrigger:{
-                        trigger: n,
-                        start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
-                        // end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
-                        markers:true,
-                        // scrub:1,
-                    },
-                    yPercent: 100,
-                    opacity:0
-                })
-            })
-        },
-        // mobile
-        "(min-width: 320px) and (max-width: 767px)": function(){
-            $('[data-name]').each(function(i,n){
-                gsap.from(n,{
-                    scrollTrigger:{
-                        trigger: n,
-                        start:"top 90%", //트리거, 윈도우 시작점이 만나야 실행`
-                        // end:"bottom top", //bottom top은 기본값, scrub있을 때만 변경 필요
-                        markers:true,
+                        // markers:true,
                         // scrub:1,
                     },
                     yPercent: 100,

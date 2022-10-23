@@ -114,7 +114,7 @@ table {
   width: 100%;
   height: 100%;
   z-index: 100;
-  position: relative;
+  position: fixed;
   background: #f9f9f9;
 }
 .page-load .load-wrap {
@@ -138,6 +138,40 @@ table {
 }
 .page-load.active .logo {
   filter: none;
+}
+
+.cursor {
+  position: fixed;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+@media (min-width: 767px) and (max-width: 1023px) {
+  .cursor {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .cursor {
+    display: none;
+  }
+}
+.cursor.hover .pointer {
+  width: 20px;
+  height: 20px;
+}
+.cursor .pointer {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.2s, height 0.2s;
+  background: rgba(17, 49, 255, 0.432);
+  width: 50px;
+  height: 50px;
+  border: none;
 }
 
 body {

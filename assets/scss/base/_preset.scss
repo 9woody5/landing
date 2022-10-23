@@ -10,7 +10,7 @@
     width: 100%;
     height: 100%;
     z-index: 100;
-    position: relative;
+    position: fixed;
     background: #f9f9f9;
     .load-wrap{opacity: 0;}
     .logo{
@@ -28,6 +28,35 @@
         .logo{
             filter: none;
         }
+    }
+}
+
+.cursor {
+    position: fixed;
+    font-size: 0;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    @include tablet{display: none;}
+    @include mobile{display: none;}
+    &.hover{
+        .pointer{
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .pointer {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        transition: width 0.2s, height 0.2s;
+        background: rgba(17, 49, 255, 0.432);
+        width: 50px;
+        height: 50px;
+        border: none;
+        
     }
 }
 
