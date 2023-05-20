@@ -7,24 +7,23 @@ $tablet-max: 1023px; // 768
 $desktop-min: 1023px; //1024
 $desktop-max: 1200px; //1024
 
-
 /*반응형, 브라우저 크기가 767px 이하일때*/
-@mixin mobile{
-    @media (max-width: $mobile-max){
-      @content;
-    }
+@mixin mobile {
+  @media (max-width: $mobile-max) {
+    @content;
   }
-  
+}
+
 /*반응형, 브라우저 크기가 768px 이상, 1023px 이하일때*/
-  @mixin tablet{
-    @media (min-width: $tablet-min) and (max-width: $tablet-max){
-      @content;
-    }
+@mixin tablet {
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) {
+    @content;
   }
+}
 
 /*반응형, 브라우저 크기가 1024px 이상일 때*/
-  @mixin desktop{
-    @media (min-width: $desktop-min){
-      @content;
-    }
+@mixin desktop {
+  @media (min-width: $desktop-min) {
+    @content;
   }
+}

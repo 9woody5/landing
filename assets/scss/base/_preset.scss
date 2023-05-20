@@ -1,85 +1,93 @@
-.blind{
-    position: absolute;
-    width: 1px; height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    clip:rect(0 0 0 0);
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
-.page-load{
-    width: 100%;
-    height: 100%;
-    z-index: 100;
-    position: fixed;
-    background: #f9f9f9;
-    .load-wrap{opacity: 0;}
-    .logo{
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 100px; height: 100px;
-        filter: blur(20px);
-        transition: filter 1s;
-        @include mobile{
-            width: 50px; height: 50px;
-        }
+.page-load {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  position: fixed;
+  background: #f9f9f9;
+  .load-wrap {
+    opacity: 0;
+  }
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    filter: blur(20px);
+    transition: filter 1s;
+    @include mobile {
+      width: 50px;
+      height: 50px;
     }
-    &.active{
-        .logo{
-            filter: none;
-        }
+  }
+  &.active {
+    .logo {
+      filter: none;
     }
+  }
 }
 
 .cursor {
-    position: fixed;
-    font-size: 0;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    pointer-events: none;
-    mix-blend-mode: difference;
+  position: fixed;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  display: none;
+  @include desktop {
+    display: block;
+    &.hover {
+      .pointer {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .pointer {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.2s, height 0.2s;
+    background: rgba(17, 49, 255, 0.432);
+    width: 50px;
+    height: 50px;
+    border: none;
     display: none;
-    @include desktop{
-        display: block;
-        &.hover{
-            .pointer{
-                width: 20px;
-                height: 20px;
-            }
-        }
+    @include desktop {
+      display: block;
     }
-    .pointer {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        transition: width 0.2s, height 0.2s;
-        background: rgba(17, 49, 255, 0.432);
-        width: 50px;
-        height: 50px;
-        border: none;
-        display: none;
-        @include desktop{display: block;}
-    }
+  }
 }
 
-body{
-    background: #f9f9f9;
-    overflow-x: hidden;
-    color: #181818;
-    font-family: 'Grotesk','Pretendard';
-    font-size: 16px;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* firefox */
-    &::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera*/
-    }
-    &.hidden{
-        overflow: hidden;
-    }
+body {
+  background: #f9f9f9;
+  overflow-x: hidden;
+  color: #181818;
+  font-family: "Grotesk", "Pretendard";
+  font-size: 16px;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  &.hidden {
+    overflow: hidden;
+  }
 }
 
-::selection{
-    background: rgb(255, 201, 52);
-    color: #0e055c;
+::selection {
+  background: rgb(255, 201, 52);
+  color: #0e055c;
 }
